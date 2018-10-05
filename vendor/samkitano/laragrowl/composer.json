@@ -1,0 +1,28 @@
+{
+    "name": "samkitano/laragrowl",
+    "description": "Flash Notifications with jGrowl for Laravel",
+    "keywords": [
+        "laravel",
+        "jGrowl",
+        "notifications"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Kitano",
+            "email": "sam@samkitano.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Kitano\\Laragrowl": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master@dev"
+    }
+}

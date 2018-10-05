@@ -1,0 +1,34 @@
+.jGrowl-notification.default {
+	background: black;
+	color: #fff;
+}
+
+.jGrowl-notification.success {
+	background:#008000;
+	color: #fff;
+}
+
+.jGrowl-notification.error {
+	background:#f00;
+	color:#fff;
+}
+
+.jGrowl-notification.danger {
+	background: #f00;
+	color: #fff;
+}
+
+.jGrowl-notification.notice {
+	background:#0ff;
+	color: #fff;
+}
+
+.jGrowl-notification.info {
+	background: #0ff;
+	color: #fff;
+}
+
+.jGrowl-notification.warning {
+	background:#ffa500;
+	color: #fff;
+}

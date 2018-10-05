@@ -1,0 +1,51 @@
+table.dataTable {
+    margin-left: 0;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 1px 1px;
+    font-size: 12px;
+}
+
+.span-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+.circle {
+    width: 30px;
+    height: 30px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+.table > thead:first-child > tr:first-child > th {
+    font-size: 12px;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 1px 1px;
+}
+
+table.dataTable tbody tr.odd {
+    background-color: #e6e6e6;
+}
+table.dataTable thead th:last-child {
+    width: auto !important;
+}
+table.dataTable tbody td:nth-child(1),
+table.dataTable tbody td:nth-child(2),
+table.dataTable tbody td:nth-child(8),
+table.dataTable tbody td:nth-child(9),
+table.dataTable tbody td:nth-child(10),
+table.dataTable tbody td:nth-child(11),
+table.dataTable tbody td:nth-child(14),
+table.dataTable tbody td:nth-child(16) {
+    text-align: center;
+}
+
+span > p{
+    margin: 0;
+}

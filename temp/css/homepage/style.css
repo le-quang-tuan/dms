@@ -1,0 +1,73 @@
+/**
+ * Styles for AG grids & Container
+ */
+/**
+ * Styles for AG grids & Container
+ */
+/* line 9, style.scss */
+.clearfix:after {
+  content: ".";
+  /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/* line 16, style.scss */
+#bill-print {
+  font-size: 14px;
+  margin: 0 auto;
+  width: 1100px;
+  color: #000;
+  font-weight: 700;
+}
+/* line 22, style.scss */
+#bill-print table {
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 100%;
+}
+/* line 27, style.scss */
+#bill-print .row-header {
+  background: #8064A2;
+  height: 10px;
+  width: 100mm;
+}
+.bill-header{
+    height: 220px;
+}
+/* line 32, style.scss */
+#bill-print input[type=text] {
+  border: 0px;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  width: 76%;
+    margin-left: 5px;
+  font-size: 14px;
+    margin-bottom: 4px;
+    float:left;
+}
+.special-request-first-column{
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
+.departure-date-width{
+    width:130px;
+}
+.dollar-sign {
+    float: left;
+}
+.vnd-sign{
+    display: block;
+    margin-left: 20px;
+    float: left;
+}
+.padding-small{
+    padding-left: 8px;
+}
+.float-date{
+    float:left;
+    margin-left: 10px;
+}

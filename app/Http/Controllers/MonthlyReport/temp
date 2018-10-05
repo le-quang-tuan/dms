@@ -1,0 +1,59 @@
+Select tenement_flats.*, tenement_elec_types.elec_type, tenement_water_types.water_type, tenement_gas_types.gas_type, A.*, B.elec_mount, C.water_mount, D.gas_mount
+From
+(Select 
+a.flat_id, 
+sum(a.manager_fee) manager_fee, sum(a.elec_fee) elec_fee, sum(a.water_fee) water_fee, sum(a.gas_fee) gas_fee, sum(a.parking_fee) parking_fee, sum(a.service_fee) service_fee,
+sum(a.manager_fee + a.elec_fee + a.water_fee + a.gas_fee + a.parking_fee + a.service_fee) as monthfee,
+sum(a.manager_fee_paid + a.elec_fee_paid + a.water_fee_paid + a.gas_fee_paid + a.parking_fee_paid + a.service_fee_paid) as paidfee,
+sum(a.manager_fee + a.elec_fee + a.water_fee + a.gas_fee + a.parking_fee + a.service_fee) -
+sum(a.manager_fee_paid + a.elec_fee_paid + a.water_fee_paid + a.gas_fee_paid + a.parking_fee_paid + a.service_fee_paid) as deptfee
+from tf_payment_all_months a
+where a.activation = 1
+and a.tenement_id = 1
+group by a.flat_id
+order by a.flat_id) as A 
+left join
+tenement_flats
+on A.flat_id = tenement_flats.id and tenement_flats.tenement_id = 1
+left join
+tenement_elec_types
+on tenement_flats.elec_type_id = tenement_elec_types.id
+left join
+tenement_gas_types
+on tenement_flats.water_type_id = tenement_gas_types.id
+left join
+tenement_water_types
+on tenement_flats.gas_type_id = tenement_water_types.id
+ 
+left join
+(Select 
+a.flat_id,
+sum(a.mount_hd) elec_mount
+from tf_payment_elec_hd a
+where a.activation = 1
+and a.tenement_id = 1
+group by a.flat_id
+order by a.flat_id) as B
+
+on A.flat_id = B.flat_id
+
+left join
+(Select 
+a.flat_id,
+sum(a.mount_hd) water_mount
+from tf_payment_water_hd a
+where a.activation = 1
+and a.tenement_id = 1
+group by a.flat_id
+order by a.flat_id) as C
+on A.flat_id = C.flat_id
+left join
+(Select 
+a.flat_id,
+sum(a.mount_hd) gas_mount
+from tf_payment_gas_hd a
+where a.activation = 1
+and a.tenement_id = 1
+group by a.flat_id
+order by a.flat_id) as D
+on A.flat_id = D.flat_id

@@ -1,0 +1,265 @@
+DROP TABLE	migrations	;
+DROP TABLE	mst_daily_activity_types	;
+DROP TABLE	mst_maintenance_items	;
+DROP TABLE	mst_payment_types	;
+DROP TABLE	mst_roles	;
+DROP TABLE	mst_user_role	;
+DROP TABLE	password_resets	;
+DROP TABLE	role_user	;
+DROP TABLE	roles	;
+DROP TABLE	tenement_daily_activity	;
+DROP TABLE	tenement_elec_tariff	;
+DROP TABLE	tenement_elec_types	;
+DROP TABLE	tenement_equipment_groups	;
+DROP TABLE	tenement_equipment_maintenance	;
+DROP TABLE	tenement_equipment_types	;
+DROP TABLE	tenement_equipments	;
+DROP TABLE	tenement_equipments_import	;
+DROP TABLE	tenement_finance_report_setting	;
+DROP TABLE	tenement_flats	;
+DROP TABLE	tenement_flats_import	;
+DROP TABLE	tenement_flats_import_old	;
+DROP TABLE	tenement_gas_tariff	;
+DROP TABLE	tenement_gas_types	;
+DROP TABLE	tenement_investors	;
+DROP TABLE	tenement_maintenance	;
+DROP TABLE	tenement_manager_days	;
+DROP TABLE	tenement_manager_offdays	;
+DROP TABLE	tenement_other_paid_dt	;
+DROP TABLE	tenement_other_paid_hd	;
+DROP TABLE	tenement_parking_offdays	;
+DROP TABLE	tenement_parking_tariff	;
+DROP TABLE	tenement_producers	;
+DROP TABLE	tenement_reasons	;
+DROP TABLE	tenement_rent_days	;
+DROP TABLE	tenement_water_tariff	;
+DROP TABLE	tenement_water_types	;
+DROP TABLE	tenements	;
+DROP TABLE	tf_elec_used	;
+DROP TABLE	tf_elec_used_import	;
+DROP TABLE	tf_gas_used	;
+DROP TABLE	tf_gas_used_import	;
+DROP TABLE	tf_paid_dt	;
+DROP TABLE	tf_paid_hd	;
+DROP TABLE	tf_paybill_dt	;
+DROP TABLE	tf_paybill_hd	;
+DROP TABLE	tf_payment_all_months	;
+DROP TABLE	tf_payment_all_months_old	;
+DROP TABLE	tf_payment_detail	;
+DROP TABLE	tf_payment_elec_dt	;
+DROP TABLE	tf_payment_elec_hd	;
+DROP TABLE	tf_payment_gas_dt	;
+DROP TABLE	tf_payment_gas_hd	;
+DROP TABLE	tf_payment_his	;
+DROP TABLE	tf_payment_manager	;
+DROP TABLE	tf_payment_manager_old	;
+DROP TABLE	tf_payment_manager_old1	;
+DROP TABLE	tf_payment_parking_dt	;
+DROP TABLE	tf_payment_parking_hd	;
+DROP TABLE	tf_payment_parking_old	;
+DROP TABLE	tf_payment_request_dt	;
+DROP TABLE	tf_payment_request_hd	;
+DROP TABLE	tf_payment_service_dt	;
+DROP TABLE	tf_payment_service_hd	;
+DROP TABLE	tf_payment_water_dt	;
+DROP TABLE	tf_payment_water_hd	;
+DROP TABLE	tf_service_used	;
+DROP TABLE	tf_service_used_import	;
+DROP TABLE	tf_vehicle	;
+DROP TABLE	tf_vehicle_import	;
+DROP TABLE	tf_water_used	;
+DROP TABLE	tf_water_used_import	;
+DROP TABLE	users	;
+DROP TABLE	users_new	;
+
+DROP PROCEDURE 	proc_getCode	;
+DROP PROCEDURE 	proc_getImportData	;
+DROP PROCEDURE 	proc_import_equipments	;
+DROP PROCEDURE 	proc_paid_from_paybill	;
+DROP PROCEDURE 	proc_paid_money	;
+DROP PROCEDURE 	proc_payment_elec_fee	;
+DROP PROCEDURE 	proc_payment_gas_fee	;
+DROP PROCEDURE 	proc_payment_manager_fee	;
+DROP PROCEDURE 	proc_payment_manager_fee_test	;
+DROP PROCEDURE 	proc_payment_month	;
+DROP PROCEDURE 	proc_payment_month_20161216	;
+DROP PROCEDURE 	proc_payment_parking_fee	;
+DROP PROCEDURE 	proc_payment_service_fee	;
+DROP PROCEDURE 	proc_payment_water_fee	;
+DROP PROCEDURE 	proc_payment_water_fee_test	;
+DROP PROCEDURE 	sp_exam	;
+DROP PROCEDURE 	sp_exam_new	;
+
+truncate table tenement_elec_tariff;
+truncate table tenement_elec_types;
+truncate table tenement_finance_report_setting;
+truncate table tenement_flats;
+truncate table tenement_flats_import;
+truncate table tenement_gas_tariff;
+truncate table tenement_gas_types;
+truncate table tenement_investors;
+truncate table tenement_manager_days;
+truncate table tenement_manager_offdays;
+truncate table tenement_other_paid_dt;
+truncate table tenement_other_paid_hd;
+truncate table tenement_parking_offdays;
+truncate table tenement_parking_tariff;
+truncate table tenement_reasons;
+truncate table tenement_rent_days;
+truncate table tenement_water_tariff;
+truncate table tenement_water_types;
+truncate table tf_elec_used;
+truncate table tf_elec_used_import;
+truncate table tf_gas_used;
+truncate table tf_gas_used_import;
+truncate table tf_paid_dt;
+truncate table tf_paid_hd;
+truncate table tf_paybill_dt;
+truncate table tf_paybill_hd;
+truncate table tf_payment_all_months;
+truncate table tf_payment_all_months_old;
+truncate table tf_payment_detail;
+truncate table tf_payment_elec_dt;
+truncate table tf_payment_elec_hd;
+truncate table tf_payment_gas_dt;
+truncate table tf_payment_gas_hd;
+truncate table tf_payment_his;
+truncate table tf_payment_manager;
+truncate table tf_payment_manager_old;
+truncate table tf_payment_parking_dt;
+truncate table tf_payment_parking_hd;
+truncate table tf_payment_parking_old;
+truncate table tf_payment_request_dt;
+truncate table tf_payment_request_hd;
+truncate table tf_payment_service_dt;
+truncate table tf_payment_service_hd;
+truncate table tf_payment_water_dt;
+truncate table tf_payment_water_hd;
+truncate table tf_service_used;
+truncate table tf_service_used_import;
+truncate table tf_vehicle;
+truncate table tf_vehicle_import;
+truncate table tf_water_used;
+truncate table tf_water_used_import;
+
+
+
+truncate table tf_paid_dt;
+truncate table tf_paid_hd;
+truncate table tf_paybill_dt;
+truncate table tf_paybill_hd;
+truncate table tf_payment_all_months;
+truncate table tf_payment_all_months_old;
+truncate table tf_payment_detail;
+truncate table tf_payment_elec_dt;
+truncate table tf_payment_elec_hd;
+truncate table tf_payment_gas_dt;
+truncate table tf_payment_gas_hd;
+truncate table tf_payment_his;
+truncate table tf_payment_manager;
+truncate table tf_payment_manager_old;
+truncate table tf_payment_parking_dt;
+truncate table tf_payment_parking_hd;
+truncate table tf_payment_parking_old;
+truncate table tf_payment_request_dt;
+truncate table tf_payment_request_hd;
+truncate table tf_payment_service_dt;
+truncate table tf_payment_service_hd;
+truncate table tf_payment_water_dt;
+truncate table tf_payment_water_hd;
+truncate table tf_service_used;
+truncate table tf_service_used_import;
+
+ALTER TABLE `tenement_water_types`
+	ADD COLUMN `calculated_by` VARCHAR(1) NULL DEFAULT NULL COMMENT 'null: %; 1:price' AFTER `water_code`;
+
+-- Khoi tao
+update tenement_flats_tmp b
+set b.TraPQLT2 = 0, b.TraPQLT1 = 0, b.TraNuocT2 = 0
+
+-- Update phi da tra cho PQL T1
+update tf_payment_all_months a, tenement_flats_tmp b
+set b.TraPQLT1 = a.manager_fee
+where a.flat_id = b.id and a.`year_month` = '201701' and b.Month1_2 > 0
+
+-- Update phi da tra cho PQL T1 nếu tiền đã trả < hơn PQL thì lấy tiền đã trả
+update tenement_flats_tmp b
+set b.TraPQLT1 = b.Month1_2
+where b.Month1_2 < b.TraPQLT1 
+
+-- Update phi da tra cho PQL2 Tổng trừ cho PQLT1 nếu > 0
+update tenement_flats_tmp b
+set b.TraPQLT2 = b.Month1_2 - b.TraPQLT1
+where b.Month1_2 - b.TraPQLT1 >= 0
+
+-- Update Phi da tra PQL2 nếu phát sinh tháng <= Trả PQL2
+update tf_payment_all_months a, tenement_flats_tmp b
+set b.TraPQLT2 = a.manager_fee
+where a.flat_id = b.id and a.`year_month` = '201702' and b.TraPQLT2 > a.manager_fee
+
+-- Update Phí đã trả cho Nước
+update tenement_flats_tmp b
+set b.TraNuocT2 = b.Month1_2 - b.TraPQLT1 - b.TraPQLT2
+where b.Month1_2 - b.TraPQLT1 - b.TraPQLT2 >= 0
+
+-- Update Phí đã trả Nước
+update tf_payment_all_months a, tenement_flats_tmp b
+set b.TraNuocT2 = a.water_fee
+where a.flat_id = b.id and a.`year_month` = '201702' and b.TraNuocT2 > a.water_fee
+
+-- Update trả phí
+update tf_payment_all_months a, tenement_flats_tmp b
+set a.manager_fee_paid = b.TraPQLT1
+where a.flat_id = b.id and a.`year_month` = '201701'
+
+update tf_payment_all_months a, tenement_flats_tmp b
+set a.manager_fee_paid = b.TraPQLT2, a.water_fee_paid = b.TraNuocT2
+where a.flat_id = b.id and a.`year_month` = '201702'
+
+CREATE TABLE `company` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(125) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`address` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`bank` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`account` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`account_name` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`office` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`office_address` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`office_phone` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`vat_no` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`comment` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`contact` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`activation` INT(11) NOT NULL,
+	`created_at` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+	`updated_at` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+	`created_by` INT(11) NOT NULL,
+	`updated_by` INT(11) NOT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2
+;
+
+CREATE TABLE tf_service_used_history LIKE tf_service_used;
+ALTER TABLE tf_service_used_history MODIFY COLUMN id int(11) NOT NULL,
+DROP PRIMARY KEY, ENGINE = MyISAM, ADD action VARCHAR(8) DEFAULT 'insert' FIRST,
+ADD revision INT(6) NOT NULL AUTO_INCREMENT AFTER action,
+ADD dt_datetime DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER revision,
+   ADD PRIMARY KEY (id, revision);
+
+DROP TRIGGER IF EXISTS tf_service_used__ai;
+DROP TRIGGER IF EXISTS tf_service_used__au;
+DROP TRIGGER IF EXISTS tf_service_used__bd;
+
+CREATE TRIGGER tf_service_used__ai AFTER INSERT ON tf_service_used FOR EACH ROW
+    INSERT INTO tf_service_used_history SELECT 'insert', NULL, NOW(), d.* 
+    FROM tf_service_used AS d WHERE d.id = NEW.id;
+
+CREATE TRIGGER tf_service_used__au AFTER UPDATE ON tf_service_used FOR EACH ROW
+    INSERT INTO tf_service_used_history SELECT 'update', NULL, NOW(), d.*
+    FROM tf_service_used AS d WHERE d.id = NEW.id;
+
+CREATE TRIGGER tf_service_used__bd BEFORE DELETE ON tf_service_used FOR EACH ROW
+    INSERT INTO tf_service_used_history SELECT 'delete', NULL, NOW(), d.* 
+    FROM tf_service_used AS d WHERE d.id = OLD.id;
